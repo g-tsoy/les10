@@ -8,8 +8,7 @@ var ar_length = ar.length;
 //  console.log(i, ar[i]);
 //}
 
-var rand_number = Math.random()*(ar_length);
-var round = Math.round(rand_number); 
+var rand_number = Math.floor(Math.random()*(ar_length));
 
 console.log("На улице идет дождь?");
-console.log(ar[round])
+console.log(ar[rand_number])
