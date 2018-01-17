@@ -23,22 +23,34 @@
 //   console.log('example_big', 'small');
 // }
 
-var a=1;
-var b=-2;
-var c=1;
+var a=0;
+var b=0;
+var c=0;
 var D=b*b-4*a*c;
-var x,y;
 
-if (D<0) {
-	console.log('Уравнение не имеет решения')
-}
-else if (D>=0) {
-	x=(-1*b-Math.sqrt(D))/(2*a); y=(-1*b+Math.sqrt(D))/(2*a);
-
-	if (x=y) {
-		console.log(`Корень уравнения (${a})x^2+(${b})x+(${c}): ${x}`)
+if (a==0) {
+	if (b!=0) {		
+		console.log(`Корень уравнения ((${b})x+(${c}): ${(-1*c)/b}`);
 	}
+	else if (b==0 && c!=0) {
+		console.log('Уравнение не имеет решения');
+	}
+	else if (b==0 && c==0) {
+		console.log(`Множество решений уравнения равно множеству действительных чисел`);
+	}
+}
+
+if (a!=0) {
+	if (D<0) {
+		console.log('Уравение не имеет решения');
+	} 
 	else {
-		console.log(`Корни уравнения (${a})x^2+(${b})x+(${c}): ${x} и ${y}`)
+		var x=(-1*b-Math.sqrt(D))/(2*a); var y=(-1*b+Math.sqrt(D))/(2*a);
+		if (x==y) {
+			console.log(`Корень уравнения (${a})x^2+(${b})x+(${c}): ${x}`);
+		}
+		else {
+			console.log(`Корни уравнения (${a})x^2+(${b})x+(${c}): ${x} и ${y}`);
+		}
 	}
 }
